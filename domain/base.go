@@ -8,10 +8,10 @@ import (
 )
 
 type Base struct {
-	ID        string     `json:"id" gorm:"type:uuid;primary_key"`
-	CreatedAt time.Timer `json:"createdAt" gorm:"type:datetime"`
-	UpdatedAt time.Timer `json:"updatedAt" gorm:"type:datetime"`
-	DeletedAt time.Timer `json:"deletedAt" gorm:"type:datetime" sql:"index"`
+	ID        string    `json:"id" gorm:"type:uuid;primary_key"`
+	CreatedAt time.Time `json:"createdAt" `
+	UpdatedAt time.Time `json:"updatedAt" `
+	DeletedAt time.Time `json:"deletedAt"  sql:"index"`
 }
 
 func (base *Base) BeforeCreate(scope *gorm.Scope) error {
